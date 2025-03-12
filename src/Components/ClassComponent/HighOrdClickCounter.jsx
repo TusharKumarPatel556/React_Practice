@@ -1,30 +1,18 @@
 import React, { Component } from "react";
+import UpdatedComponent from "./HocWithCounter";
 
 class HighOrdClickCounter extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      count: 0,
-    };
-  }
-
-  incrementCount = () => {
-    this.setState((prevState) => {
-      return {
-        count: prevState.count + 1,
-      };
-    });
-  };
-
   render() {
-    const { count } = this.state;
+    const { count } = this.props;
     return (
       <div>
-        <button onClick={this.incrementCount}> Clicked {count} times</button>
+        <button onClick={this.props.incrementCount}>
+          {" "}
+          Clicked {count} {this.props.name} times
+        </button>
       </div>
     );
   }
 }
 
-export default HighOrdClickCounter;
+export default UpdatedComponent(HighOrdClickCounter);

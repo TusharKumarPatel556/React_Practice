@@ -1,27 +1,17 @@
 import React, { Component } from "react";
+import UpdatedComponent from "./HocWithCounter";
 
 class HighOrdHoverCounter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-  }
-
-  incrementCount = () => {
-    this.setState((prevstate) => {
-      return { count: prevstate.count + 1 };
-    });
-  };
-
   render() {
-    const { count } = this.state;
+    const { count } = this.props;
     return (
       <div>
-        <h2 onMouseOver={this.incrementCount}>Hovered {count} times</h2>
+        <h2 onMouseOver={this.props.incrementCount}>
+          Hovered {count} {this.props.name} times
+        </h2>
       </div>
     );
   }
 }
 
-export default HighOrdHoverCounter;
+export default UpdatedComponent(HighOrdHoverCounter);

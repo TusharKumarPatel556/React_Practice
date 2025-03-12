@@ -20,12 +20,39 @@ import ErrorBoundaries from "./Components/FunctionalComponent/ErrorBoundaries";
 import ErrMainBoundary from "./Components/FunctionalComponent/ErrMainBoundary";
 import HighOrdClickCounter from "./Components/ClassComponent/HighOrdClickCounter";
 import HighOrdHoverCounter from "./Components/ClassComponent/HighOrdHoverCounter";
+import RenderProps from "./Components/ClassComponent/RenderProps";
+import REnderPrpHoverCounter from "./Components/ClassComponent/REnderPrpHoverCounter";
+import User from "./Components/ClassComponent/User";
+import Counter from "./Components/ClassComponent/RePropCounter";
+import ComponentC from "./Components/Context/ComponentC";
+import { UserProvider } from "./Components/Context/UserContext";
 
 function App() {
   return (
     <>
-      <HighOrdClickCounter />
-      <HighOrdHoverCounter />
+      <UserProvider value="vishwas">
+        <ComponentC />
+      </UserProvider>
+
+      {/* <Counter
+        render={(count, incrementCount) => (
+          <RenderProps count={count} incrementCount={incrementCount} />
+        )}
+      />
+      <Counter
+        render={(count, incrementCount) => (
+          <REnderPrpHoverCounter
+            count={count}
+            incrementCount={incrementCount}
+          />
+        )}
+      /> */}
+
+      {/* <RenderProps />
+      <REnderPrpHoverCounter />
+      <User render={(isLoggedIn) => (isLoggedIn ? "Vishwas" : "Guest")} /> */}
+      {/* <HighOrdClickCounter name="tushar" />
+      <HighOrdHoverCounter /> */}
       {/* <ErrMainBoundary>
         <ErrorBoundaries heroName="Batman" />
       </ErrMainBoundary>

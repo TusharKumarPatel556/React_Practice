@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Welcome from "./Components/ClassComponent/Welcome";
 import CounterState from "./Components/ClassComponent/CounterState";
 import "./App.css";
@@ -24,15 +24,28 @@ import RenderProps from "./Components/ClassComponent/RenderProps";
 import REnderPrpHoverCounter from "./Components/ClassComponent/REnderPrpHoverCounter";
 import User from "./Components/ClassComponent/User";
 import Counter from "./Components/ClassComponent/RePropCounter";
-import ComponentC from "./Components/Context/ComponentC";
+// import ComponentC from "./Components/Context/ComponentC";
 import { UserProvider } from "./Components/Context/UserContext";
+import ThemeChange from "./Hooks/UseStatePractice/ThemeChange";
+import HookCounterOne from "./Hooks/UseEffectPractice/HookCounterOne";
+import Hookmouse from "./Hooks/UseEffectPractice/Hookmouse";
+import FetchingData from "./Hooks/UseEffectPractice/FetchingData";
+// import Main from "./Hooks/UseContext/main";
+import ComponentC from "./Hooks/UseContext/ComponentC";
 
 function App() {
+  const [toggle, setToggle] = useState(true);
   return (
     <>
-      <UserProvider value="vishwas">
+      <ComponentC />
+      {/* <FetchingData /> */}
+      {/* <button onClick={() => setToggle((prev) => !prev)}>click</button>
+      {toggle ? <Hookmouse /> : null} */}
+      {/* <HookCounterOne /> */}
+      {/* <ThemeChange /> */}
+      {/* <UserProvider value="vishwas">
         <ComponentC />
-      </UserProvider>
+      </UserProvider> */}
 
       {/* <Counter
         render={(count, incrementCount) => (
